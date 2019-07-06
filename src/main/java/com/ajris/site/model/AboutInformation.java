@@ -1,9 +1,11 @@
 package com.ajris.site.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-public class About {
+@AllArgsConstructor
+public class AboutInformation {
     private String name;
     private String email;
 }

@@ -1,6 +1,7 @@
 package com.ajris.site.controller;
 
 import com.ajris.site.model.AboutInformation;
+import com.ajris.site.model.BlogInformation;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,15 +10,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-public class AboutController {
+public class BlogController {
 
     @CrossOrigin(origins = "http://localhost:3000")
-    @GetMapping(path = "about")
-    public List<AboutInformation> getAboutInformation() {
-        List<AboutInformation> aboutInformations = new ArrayList<>();
+    @GetMapping(path = "blog")
+    public List<BlogInformation> getBlogInformation() {
+        List<BlogInformation> blogInformation = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            aboutInformations.add(new AboutInformation(((Integer) i).toString(), ((Integer) i).toString()));
+            blogInformation.add(new BlogInformation());
         }
-        return aboutInformations;
+        return blogInformation;
     }
 }
