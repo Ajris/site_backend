@@ -2,6 +2,6 @@ package com.ajris.site.technology;
 
 import java.util.List;
 
-public interface TechnologyService {
+interface TechnologyService {
     List<TechnologyInformation> getAllTechnologyInformation();
 }

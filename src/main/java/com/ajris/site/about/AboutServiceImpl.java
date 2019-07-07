@@ -6,8 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class AboutServiceImpl implements AboutService {
-
+class AboutServiceImpl implements AboutService {
     @Override
     public List<AboutInformation> getAllAboutInformations() {
         List<AboutInformation> aboutInformations = new ArrayList<>();

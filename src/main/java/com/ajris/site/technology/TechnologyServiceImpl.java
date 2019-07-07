@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class TechnologyServiceImpl implements TechnologyService{
+class TechnologyServiceImpl implements TechnologyService{
     @Override
     public List<TechnologyInformation> getAllTechnologyInformation() {
         List<TechnologyInformation> technologyInformations = new ArrayList<>();

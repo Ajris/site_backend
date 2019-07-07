@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class TechnologyController {
+class TechnologyController {
 
     private TechnologyService technologyService;
 

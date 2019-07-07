@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class BlogServiceImpl implements BlogService {
+class BlogServiceImpl implements BlogService {
     @Override
     public List<BlogInformation> getAllBlogInformation() {
         List<BlogInformation> blogInformation = new ArrayList<>();

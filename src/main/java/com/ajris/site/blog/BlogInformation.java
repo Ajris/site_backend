@@ -3,7 +3,7 @@ package com.ajris.site.blog;
 import lombok.Data;
 
 @Data
-public class BlogInformation {
+class BlogInformation {
     private String title;
     private String shortText;
 }
