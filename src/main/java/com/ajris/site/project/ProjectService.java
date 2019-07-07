@@ -1,4 +1,7 @@
 package com.ajris.site.project;
 
-public class ProjectService {
+import java.util.List;
+
+public interface ProjectService {
+    List<ProjectInformation> getAllProjectInformation();
 }

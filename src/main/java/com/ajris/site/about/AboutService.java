@@ -1,4 +1,7 @@
 package com.ajris.site.about;
 
-public class AboutService {
+import java.util.List;
+
+public interface AboutService {
+    List<AboutInformation> getAllAboutInformations();
 }

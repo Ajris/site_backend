@@ -10,13 +10,15 @@ import java.util.List;
 @RestController
 public class BlogController {
 
+    private BlogService blogService;
+
+    public BlogController(BlogService blogService) {
+        this.blogService = blogService;
+    }
+
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping(path = "blog")
     public List<BlogInformation> getBlogInformation() {
-        List<BlogInformation> blogInformation = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            blogInformation.add(new BlogInformation());
-        }
-        return blogInformation;
+        return blogService.getAllBlogInformation();
     }
 }

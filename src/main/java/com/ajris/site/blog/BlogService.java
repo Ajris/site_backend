@@ -1,4 +1,7 @@
 package com.ajris.site.blog;
 
-public class BlogService {
+import java.util.List;
+
+public interface BlogService {
+    List<BlogInformation> getAllBlogInformation();
 }
