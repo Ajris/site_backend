@@ -1,4 +1,4 @@
-package com.ajris.site.model;
+package com.ajris.site.about;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

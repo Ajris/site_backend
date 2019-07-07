@@ -1,7 +1,5 @@
-package com.ajris.site.controller;
+package com.ajris.site.blog;
 
-import com.ajris.site.model.AboutInformation;
-import com.ajris.site.model.BlogInformation;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

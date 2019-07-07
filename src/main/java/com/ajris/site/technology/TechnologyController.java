@@ -1,6 +1,5 @@
-package com.ajris.site.controller;
+package com.ajris.site.technology;
 
-import com.ajris.site.model.TechnologyInformation;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

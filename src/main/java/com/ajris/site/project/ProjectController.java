@@ -1,6 +1,5 @@
-package com.ajris.site.controller;
+package com.ajris.site.project;
 
-import com.ajris.site.model.ProjectInformation;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

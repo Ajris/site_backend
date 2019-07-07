@@ -1,4 +1,4 @@
-package com.ajris.site.model;
+package com.ajris.site.blog;
 
 import lombok.Data;
 
