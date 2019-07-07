@@ -11,8 +11,8 @@
     <groupId>com.ajris</groupId>
     <artifactId>site</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>site</name>
-    <description>Site project</description>
+    <name>Site Backend</name>
+    <description>Site Backend Project</description>
 
     <properties>
         <java.version>12</java.version>
