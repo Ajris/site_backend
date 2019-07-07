@@ -11,7 +11,7 @@ class ProjectServiceImpl implements ProjectService {
     public List<ProjectInformation> getAllProjectInformation() {
         List<ProjectInformation> projectInformations = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            projectInformations.add(new ProjectInformation());
+            projectInformations.add(new ProjectInformation("1", "1"));
         }
         return projectInformations;
     }

@@ -11,7 +11,7 @@ class TechnologyServiceImpl implements TechnologyService{
     public List<TechnologyInformation> getAllTechnologyInformation() {
         List<TechnologyInformation> technologyInformations = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            technologyInformations.add(new TechnologyInformation());
+            technologyInformations.add(new TechnologyInformation("1", "1"));
         }
         return technologyInformations;
     }

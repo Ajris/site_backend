@@ -11,7 +11,7 @@ class BlogServiceImpl implements BlogService {
     public List<BlogInformation> getAllBlogInformation() {
         List<BlogInformation> blogInformation = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            blogInformation.add(new BlogInformation());
+            blogInformation.add(new BlogInformation("1", "1"));
         }
         return blogInformation;
     }
