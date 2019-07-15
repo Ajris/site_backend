@@ -2,17 +2,19 @@ package com.ajris.site.blog;
 
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 class BlogServiceImpl implements BlogService {
+
+    private final BlogRepository blogRepository;
+
+    public BlogServiceImpl(BlogRepository blogRepository) {
+        this.blogRepository = blogRepository;
+    }
+
     @Override
     public List<BlogInformation> getAllBlogInformation() {
-        List<BlogInformation> blogInformation = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            blogInformation.add(new BlogInformation("1", "1"));
-        }
-        return blogInformation;
+        return blogRepository.findAll();
     }
 }

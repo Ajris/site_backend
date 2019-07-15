@@ -33,7 +33,7 @@ public class TechnologyControllerTest {
 
     @Test
     public void whenAskingForTechnologyInformationReturnList() throws Exception {
-        TechnologyInformation aboutInformation = new TechnologyInformation("1", "1");
+        TechnologyInformation aboutInformation = TechnologyInformation.builder().name("1").build();
         List<TechnologyInformation> allInformation = Collections.singletonList(aboutInformation);
         given(aboutService.getAllTechnologyInformation()).willReturn(allInformation);
 

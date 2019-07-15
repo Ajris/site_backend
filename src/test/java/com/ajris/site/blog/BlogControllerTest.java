@@ -33,7 +33,7 @@ public class BlogControllerTest {
 
     @Test
     public void whenAskingForBlogInformationReturnList() throws Exception {
-        BlogInformation blogInformation = new BlogInformation("1", "1");
+        BlogInformation blogInformation = BlogInformation.builder().title("1").build();
         List<BlogInformation> allInformation = Collections.singletonList(blogInformation);
         given(aboutService.getAllBlogInformation()).willReturn(allInformation);
 
