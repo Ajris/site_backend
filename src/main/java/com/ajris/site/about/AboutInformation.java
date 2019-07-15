@@ -8,4 +8,5 @@ import lombok.Data;
 class AboutInformation {
     private String name;
     private String email;
+
 }
