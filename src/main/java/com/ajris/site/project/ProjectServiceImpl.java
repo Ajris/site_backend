@@ -9,15 +9,19 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 class ProjectServiceImpl implements ProjectService {
+    private static List<String> chosenProjects = Arrays.asList("site","site_backend","orlen");
+
     @Override
     public List<ProjectInformation> getAllProjectInformation() throws IOException {
         String content = getContent();
         List<ProjectInformation> projectInformations = convertContentToRepoList(content);
-        return projectInformations;
+        return getChosenProjects(projectInformations);
     }
 
     private String getContent() throws IOException {
@@ -40,5 +44,12 @@ class ProjectServiceImpl implements ProjectService {
     private static List<ProjectInformation> convertContentToRepoList(String content) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.readValue(content, objectMapper.getTypeFactory().constructCollectionType(List.class, ProjectInformation.class));
+    }
+
+    private  static List<ProjectInformation> getChosenProjects (List<ProjectInformation> allProjects){
+        return allProjects.stream()
+                .filter(project -> chosenProjects.contains(project.getName()))
+                .collect(Collectors.toList());
+
     }
 }

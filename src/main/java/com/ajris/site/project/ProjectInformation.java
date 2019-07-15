@@ -9,7 +9,6 @@ import lombok.Data;
 @AllArgsConstructor
 class ProjectInformation {
     private String name;
-
     private String html_url;
     private String description;
     private String image;
