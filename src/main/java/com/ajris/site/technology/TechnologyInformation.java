@@ -7,5 +7,4 @@ import lombok.Data;
 @AllArgsConstructor
 class TechnologyInformation {
     private String name;
-    private String pathToImage;
 }

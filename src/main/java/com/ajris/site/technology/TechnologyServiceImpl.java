@@ -3,16 +3,19 @@ package com.ajris.site.technology;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
-class TechnologyServiceImpl implements TechnologyService{
+class TechnologyServiceImpl implements TechnologyService {
+    private static List<String> technologiesList = Arrays.asList("c.svg", "docker.svg", "gradle.svg", "hibernate.png", "java.svg", "junit5.png", "maven.svg", "mockito.png", "mongodb.svg", "mysql.svg", "react.svg", "spring-boot.svg", "travis.svg");
+
     @Override
     public List<TechnologyInformation> getAllTechnologyInformation() {
-        List<TechnologyInformation> technologyInformations = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            technologyInformations.add(new TechnologyInformation("1", "1"));
+        List<TechnologyInformation> technologies = new ArrayList<>();
+        for (String s : technologiesList) {
+            technologies.add(new TechnologyInformation(s));
         }
-        return technologyInformations;
+        return technologies;
     }
 }

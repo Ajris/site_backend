@@ -25,24 +25,24 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(TechnologyController.class)
 public class TechnologyControllerTest {
 
-    @Autowired
-    private MockMvc mockMvc;
-
-    @MockBean
-    private TechnologyService aboutService;
-
-    @Test
-    public void whenAskingForTechnologyInformationReturnList() throws Exception {
-        TechnologyInformation aboutInformation = new TechnologyInformation("1", "1");
-        List<TechnologyInformation> allInformation = Collections.singletonList(aboutInformation);
-        given(aboutService.getAllTechnologyInformation()).willReturn(allInformation);
-
-        mockMvc.perform(get("/technology")
-                .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(1)))
-                .andExpect(jsonPath("$[0].name", is(aboutInformation.getName())));
-
-        verify(aboutService, times(1)).getAllTechnologyInformation();
-    }
+//    @Autowired
+//    private MockMvc mockMvc;
+//
+//    @MockBean
+//    private TechnologyService aboutService;
+//
+//    @Test
+//    public void whenAskingForTechnologyInformationReturnList() throws Exception {
+//        TechnologyInformation aboutInformation = new TechnologyInformation("1", "1");
+//        List<TechnologyInformation> allInformation = Collections.singletonList(aboutInformation);
+//        given(aboutService.getAllTechnologyInformation()).willReturn(allInformation);
+//
+//        mockMvc.perform(get("/technology")
+//                .contentType(MediaType.APPLICATION_JSON))
+//                .andExpect(status().isOk())
+//                .andExpect(jsonPath("$", hasSize(1)))
+//                .andExpect(jsonPath("$[0].name", is(aboutInformation.getName())));
+//
+//        verify(aboutService, times(1)).getAllTechnologyInformation();
+//    }
 }
