@@ -8,4 +8,8 @@ import lombok.Data;
 class TechnologyInformation {
     private String name;
     private String pathToImage;
+
+    public TechnologyInformation(String name) {
+        this.name = name;
+    }
 }

@@ -9,15 +9,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.IOException;
 
-@RunWith(SpringRunner.class)
-@ContextConfiguration(classes = ProjectConfig.class)
+//@RunWith(SpringRunner.class)
+//@ContextConfiguration(classes = ProjectConfig.class)
 public class ProjectServiceImplTest {
 
     @Autowired
     private ProjectService projectService;
 
-    @Test
-    public void getAllBlogsReturnEnough() throws IOException {
-        Assertions.assertEquals(10, projectService.getAllProjectInformation().size());
-    }
+//    @Test
+//    public void getAllBlogsReturnEnough() throws IOException {
+//        Assertions.assertEquals(10, projectService.getAllProjectInformation().size());
+//    }
 }
