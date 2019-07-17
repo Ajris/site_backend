@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -41,15 +40,14 @@ class ProjectServiceImpl implements ProjectService {
         return content.toString();
     }
 
-    private static List<ProjectInformation> convertContentToRepoList(String content) throws IOException {
+    private List<ProjectInformation> convertContentToRepoList(String content) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.readValue(content, objectMapper.getTypeFactory().constructCollectionType(List.class, ProjectInformation.class));
     }
 
-    private  static List<ProjectInformation> getChosenProjects (List<ProjectInformation> allProjects){
+    private List<ProjectInformation> getChosenProjects(List<ProjectInformation> allProjects) {
         return allProjects.stream()
                 .filter(project -> chosenProjects.contains(project.getName()))
                 .collect(Collectors.toList());
-
     }
 }

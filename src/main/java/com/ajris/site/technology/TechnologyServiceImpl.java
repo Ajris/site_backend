@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 class TechnologyServiceImpl implements TechnologyService {
@@ -12,10 +13,8 @@ class TechnologyServiceImpl implements TechnologyService {
 
     @Override
     public List<TechnologyInformation> getAllTechnologyInformation() {
-        List<TechnologyInformation> technologies = new ArrayList<>();
-        for (String s : technologiesList) {
-            technologies.add(new TechnologyInformation(s));
-        }
-        return technologies;
+        return technologiesList.stream()
+                .map(TechnologyInformation::new)
+                .collect(Collectors.toList());
     }
 }

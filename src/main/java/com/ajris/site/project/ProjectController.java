@@ -1,5 +1,7 @@
 package com.ajris.site.project;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,7 +20,11 @@ class ProjectController {
 
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping(path = "project")
-    public List<ProjectInformation> getProjectInformations() throws IOException {
-        return projectService.getAllProjectInformation();
+    public ResponseEntity<List<ProjectInformation>> getProjectInformation() {
+        try {
+            return new ResponseEntity<>(projectService.getAllProjectInformation(), HttpStatus.ACCEPTED);
+        } catch (IOException e) {
+            return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
+        }
     }
 }
