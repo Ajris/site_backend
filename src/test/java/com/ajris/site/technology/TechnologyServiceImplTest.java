@@ -16,6 +16,6 @@ public class TechnologyServiceImplTest {
 
     @Test
     public void getAllBlogsReturnEnough() {
-        Assertions.assertEquals(10, technologyService.getAllTechnologyInformation().size());
+        Assertions.assertEquals(14, technologyService.getAllTechnologyInformation().size());
     }
 }
