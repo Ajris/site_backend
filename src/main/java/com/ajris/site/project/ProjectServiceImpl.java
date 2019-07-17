@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 @Service
 class ProjectServiceImpl implements ProjectService {
-    private static List<String> chosenProjects = Arrays.asList("site","site_backend","orlen");
+    private static List<String> chosenProjects = Arrays.asList("site_frontend","orlen");
 
     @Override
     public List<ProjectInformation> getAllProjectInformation() throws IOException {
