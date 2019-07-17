@@ -7,5 +7,4 @@ RUN mvn install
 FROM openjdk:12-jdk-oracle
 WORKDIR /app
 COPY --from=build /app/target/site-0.0.1-SNAPSHOT.jar /app
-EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "site-0.0.1-SNAPSHOT.jar"]
