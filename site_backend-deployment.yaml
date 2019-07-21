@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: site_backend-deployment
+spec:
+  selector:
+    matchLabels:
+      app: site_backend
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: site_backend
+    spec:
+      containers:
+        - name: site_backend
+          image: ajris/site_backend:latest
+          ports:
+            - containerPort: 8080
