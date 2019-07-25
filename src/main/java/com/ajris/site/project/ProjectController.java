@@ -18,7 +18,7 @@ class ProjectController {
         this.projectService = projectService;
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin
     @GetMapping(path = "project")
     public ResponseEntity<List<ProjectInformation>> getProjectInformation() {
         try {
