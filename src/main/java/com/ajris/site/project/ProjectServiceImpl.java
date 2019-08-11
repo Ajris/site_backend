@@ -47,7 +47,7 @@ class ProjectServiceImpl implements ProjectService {
 
     private List<ProjectInformation> getChosenProjects(List<ProjectInformation> allProjects) {
         return allProjects.stream()
-                .filter(project -> chosenProjects.contains(project.getName()))
+//                .filter(project -> chosenProjects.contains(project.getName()))
                 .collect(Collectors.toList());
     }
 }

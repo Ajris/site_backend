@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend-deployment
+  labels:
+    app: backend
 spec:
   selector:
     matchLabels:
@@ -14,6 +16,6 @@ spec:
     spec:
       containers:
         - name: backend
-          image: ajris/site_backend:latest
+          image: ajris/site_backend:pr-kubernetes
           ports:
             - containerPort: 8080
