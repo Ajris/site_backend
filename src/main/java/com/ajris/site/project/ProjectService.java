@@ -1,8 +1,8 @@
 package com.ajris.site.project;
 
-import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.Future;
 
 interface ProjectService {
-    List<ProjectInformation> getAllProjectInformation() throws IOException;
+    Future<List<ProjectInformation>> getAllProjectInformation();
 }

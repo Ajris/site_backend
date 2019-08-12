@@ -1,7 +1,8 @@
 package com.ajris.site.blog;
 
 import java.util.List;
+import java.util.concurrent.Future;
 
 interface BlogService {
-    List<BlogInformation> getAllBlogInformation();
+    Future<List<BlogInformation>> getAllBlogInformation();
 }
