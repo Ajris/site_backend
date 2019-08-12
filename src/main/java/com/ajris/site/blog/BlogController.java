@@ -29,7 +29,6 @@ class BlogController {
         try {
             return new ResponseEntity<>(blogService.getAllBlogInformation().get(), HttpStatus.ACCEPTED);
         } catch (ExecutionException | InterruptedException e) {
-            log.error("BLOG ERROR");
             log.error(e.getMessage());
             return new ResponseEntity<>(new ArrayList<>(), HttpStatus.REQUEST_TIMEOUT);
         }
