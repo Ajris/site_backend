@@ -8,10 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 @RestController
 @RequestMapping("api")
@@ -27,11 +24,6 @@ class ProjectController {
     @CrossOrigin
     @GetMapping(path = "project")
     public ResponseEntity<List<ProjectInformation>> getProjectInformation() {
-        try {
-            return new ResponseEntity<>(projectService.getAllProjectInformation().get(), HttpStatus.ACCEPTED);
-        } catch (InterruptedException | ExecutionException e) {
-            log.error(e.getMessage());
-            return new ResponseEntity<>(new ArrayList<>(), HttpStatus.REQUEST_TIMEOUT);
-        }
+        return new ResponseEntity<>(projectService.getAllProjectInformation().join(), HttpStatus.ACCEPTED);
     }
 }

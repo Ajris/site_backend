@@ -10,7 +10,6 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.Future;
 
 @Service
 class ProjectServiceImpl implements ProjectService {
@@ -22,7 +21,7 @@ class ProjectServiceImpl implements ProjectService {
 
     @Async
     @Override
-    public Future<List<ProjectInformation>> getAllProjectInformation() {
+    public CompletableFuture<List<ProjectInformation>> getAllProjectInformation() {
         return CompletableFuture.completedFuture(getContent());
     }
 

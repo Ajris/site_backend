@@ -1,8 +1,8 @@
 package com.ajris.site.project;
 
 import java.util.List;
-import java.util.concurrent.Future;
+import java.util.concurrent.CompletableFuture;
 
 interface ProjectService {
-    Future<List<ProjectInformation>> getAllProjectInformation();
+    CompletableFuture<List<ProjectInformation>> getAllProjectInformation();
 }

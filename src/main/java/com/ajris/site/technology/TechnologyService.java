@@ -1,8 +1,8 @@
 package com.ajris.site.technology;
 
 import java.util.List;
-import java.util.concurrent.Future;
+import java.util.concurrent.CompletableFuture;
 
 interface TechnologyService {
-    Future<List<TechnologyInformation>> getAllTechnologyInformation();
+    CompletableFuture<List<TechnologyInformation>> getAllTechnologyInformation();
 }

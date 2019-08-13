@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 
 @Service
@@ -15,9 +14,7 @@ class TechnologyServiceImpl implements TechnologyService {
 
     @Async
     @Override
-    public Future<List<TechnologyInformation>> getAllTechnologyInformation() {
-        return CompletableFuture.completedFuture(technologiesList.stream()
-                .map(TechnologyInformation::new)
-                .collect(Collectors.toList()));
+    public CompletableFuture<List<TechnologyInformation>> getAllTechnologyInformation() {
+        return CompletableFuture.completedFuture(technologiesList.stream().map(TechnologyInformation::new).collect(Collectors.toList()));
     }
 }

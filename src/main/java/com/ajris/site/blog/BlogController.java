@@ -8,9 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 @RestController
 @RequestMapping("api")
@@ -26,11 +24,6 @@ class BlogController {
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping(path = "blog")
     public ResponseEntity<List<BlogInformation>> getBlogInformation() {
-        try {
-            return new ResponseEntity<>(blogService.getAllBlogInformation().get(), HttpStatus.ACCEPTED);
-        } catch (ExecutionException | InterruptedException e) {
-            log.error(e.getMessage());
-            return new ResponseEntity<>(new ArrayList<>(), HttpStatus.REQUEST_TIMEOUT);
-        }
+        return new ResponseEntity<>(blogService.getAllBlogInformation().join(), HttpStatus.ACCEPTED);
     }
 }

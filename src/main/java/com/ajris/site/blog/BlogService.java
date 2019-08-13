@@ -1,8 +1,8 @@
 package com.ajris.site.blog;
 
 import java.util.List;
-import java.util.concurrent.Future;
+import java.util.concurrent.CompletableFuture;
 
 interface BlogService {
-    Future<List<BlogInformation>> getAllBlogInformation();
+    CompletableFuture<List<BlogInformation>> getAllBlogInformation();
 }
