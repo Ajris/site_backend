@@ -22,7 +22,7 @@ addons:
       secure: "epYUtGQXCF707QCNuFucgibER+B/1eSo55usEfdy49S76wOKLN63WV93EbkEruWHgCU2NkheIGgpL6Xykg5W4rELGPrSN7XtNbhRyv4xSNXHjrePd5OutFq0aYSCxO5At3a31W5u8HmeqBebCIeyfZX2c6Ts3xoBnV5PASmG9pPnwwu/oA847A9/iC4iztNTVyDCmebjUSEytl1YUUqyrjUALjPcE8yzNvFbmSwceY3ZnLJzPXhwpZ/TUR4eiHNoP55kaYQatbxowLNQKvCx/m8nLhQTZuwaVgOuqaT2qONeU8iIcaghUOFbwbj3vzOkDOVhCXuLAYQGhmPJBCGwzZCLOf6UAGSDrvadNhSoqOQIyJGa9IaqyQ6c7gGJ0/5IKs5gHP76dExviwES06bHm45/E10oqYTj5uNS5doMisGV3CTr3/ICK+tQ0mFQJ6z1Sug+I9Lhl5j/Aeg7jK2llQBk2DXoUF5k7bVO+fmsiUN3AuIM+SqDHV+iHinYdj/+oJj8O1bSlxcj1imoQmnyt2mLQ91duDPbyyDeeKEim1EO2WmgiIIUCDIvyFd7N1p+rgkWr1Wq/khKzmCJYDPwAe1uWBj3hgcIHdwKs8waOYDhJE+A0+ucBj90CCNvHYeh65Ajhhszu0jn5XqfnrkfxaJoVbfMt9xZlPMbW8Qz3Vg="
 
 script:
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Ajris_site_backend
+  - ./gradlew sonarqube
 
 after_success:
   - docker login -u $DOCKER_USER -p $DOCKER_PASS

@@ -32,8 +32,6 @@ class ProjectServiceImpl implements ProjectService {
                 new ParameterizedTypeReference<>() {
                 });
 
-        System.out.println(restTemplate);
-        System.out.println(response);
         return response.getBody();
     }
 }
