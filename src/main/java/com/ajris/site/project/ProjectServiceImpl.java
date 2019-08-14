@@ -1,6 +1,5 @@
 package com.ajris.site.project;
 
-import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -13,10 +12,11 @@ import java.util.concurrent.CompletableFuture;
 
 @Service
 class ProjectServiceImpl implements ProjectService {
+
     private final RestTemplate restTemplate;
 
-    public ProjectServiceImpl(RestTemplateBuilder restTemplate) {
-        this.restTemplate = restTemplate.build();
+    public ProjectServiceImpl(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
     }
 
     @Async
@@ -31,6 +31,9 @@ class ProjectServiceImpl implements ProjectService {
         ResponseEntity<List<ProjectInformation>> response = restTemplate.exchange(url, HttpMethod.GET, null,
                 new ParameterizedTypeReference<>() {
                 });
+
+        System.out.println(restTemplate);
+        System.out.println(response);
         return response.getBody();
     }
 }
