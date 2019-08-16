@@ -21,7 +21,7 @@ class BlogController {
         this.blogService = blogService;
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin
     @GetMapping(path = "blog")
     public ResponseEntity<List<BlogInformation>> getBlogInformation() {
         return new ResponseEntity<>(blogService.getAllBlogInformation().join(), HttpStatus.ACCEPTED);

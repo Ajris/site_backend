@@ -21,7 +21,7 @@ class TechnologyController {
         this.technologyService = technologyService;
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin
     @GetMapping(path = "technology")
     public ResponseEntity<List<TechnologyInformation>> getTechnologyInformations() {
         return new ResponseEntity<>(technologyService.getAllTechnologyInformation().join(), HttpStatus.ACCEPTED);
