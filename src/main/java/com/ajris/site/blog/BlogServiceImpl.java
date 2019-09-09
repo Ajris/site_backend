@@ -1,18 +1,29 @@
 package com.ajris.site.blog;
 
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 @Service
 class BlogServiceImpl implements BlogService {
+
+    private final BlogRepository blogRepository;
+
+    public BlogServiceImpl(BlogRepository blogRepository) {
+        this.blogRepository = blogRepository;
+    }
+
+    @Async
     @Override
-    public List<BlogInformation> getAllBlogInformation() {
-        List<BlogInformation> blogInformation = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            blogInformation.add(new BlogInformation("1", "1"));
-        }
-        return blogInformation;
+    public CompletableFuture<List<BlogInformation>> getAllBlogInformation() {
+        return CompletableFuture.completedFuture(blogRepository.findAll());
+    }
+
+    @Async
+    @Override
+    public CompletableFuture<Long> saveBlog(BlogData blogData) {
+        return CompletableFuture.completedFuture(blogRepository.save(new BlogInformation(blogData.getTitle(), blogData.getShortText())).getId());
     }
 }

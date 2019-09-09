@@ -1,8 +1,10 @@
 package com.ajris.site.technology;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 
+@Builder
 @Data
 @AllArgsConstructor
 class TechnologyInformation {
