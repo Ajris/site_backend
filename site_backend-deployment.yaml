@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: ajris/site_backend:travis-47
+          image: ajris/site_backend:travis-48
           ports:
             - containerPort: 8080
           imagePullPolicy: Always

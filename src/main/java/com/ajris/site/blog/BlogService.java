@@ -5,4 +5,5 @@ import java.util.concurrent.CompletableFuture;
 
 interface BlogService {
     CompletableFuture<List<BlogInformation>> getAllBlogInformation();
+    CompletableFuture<Long> saveBlog(BlogData blogData);
 }

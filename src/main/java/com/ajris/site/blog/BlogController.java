@@ -5,6 +5,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,5 +28,11 @@ class BlogController {
     @GetMapping(path = "blog")
     public ResponseEntity<List<BlogInformation>> getBlogInformation() {
         return new ResponseEntity<>(blogService.getAllBlogInformation().join(), HttpStatus.ACCEPTED);
+    }
+
+    @CrossOrigin
+    @PostMapping(path = "blog")
+    public ResponseEntity<Long> saveBlog(@RequestBody BlogData blogData) {
+        return new ResponseEntity<>(blogService.saveBlog(blogData).join(), HttpStatus.CREATED);
     }
 }
