@@ -40,14 +40,4 @@ class BlogController {
     public ResponseEntity<Long> saveBlog(@RequestBody BlogData blogData) {
         return new ResponseEntity<>(blogService.saveBlog(blogData).join(), HttpStatus.CREATED);
     }
-
-    @GetMapping("/home")
-    @SuppressWarnings("unchecked")
-    @CrossOrigin
-    public String howdy(Model model, Principal principal) {
-        OAuth2Authentication authentication = (OAuth2Authentication) principal;
-        Map<String, Object> user = (Map<String, Object>) authentication.getUserAuthentication().getDetails();
-        model.addAttribute("user", user);
-        return "home";
-    }
 }
