@@ -11,7 +11,7 @@ public class OAuthSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {
         http
                 .antMatcher("/**").authorizeRequests()
-                .antMatchers(HttpMethod.GET,"/api/blog").permitAll()
+                .antMatchers(HttpMethod.GET,"/api/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .oauth2ResourceServer().jwt();
